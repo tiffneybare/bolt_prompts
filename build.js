@@ -3,6 +3,8 @@ import path from 'path';
 
 const PROMPT_ROOT = './prompts';
 const OUTPUT_FILE = './prompt.md';
+const preamble = fs.readFileSync(path.join(sharedDir, 'preamble.md'), 'utf-8');
+promptContent += preamble + '\n\n';
 
 const getAllPromptFiles = (dirPath) => {
   const entries = fs.readdirSync(dirPath, { withFileTypes: true });
